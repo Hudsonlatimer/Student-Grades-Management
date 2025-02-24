@@ -7,11 +7,11 @@ int main() {
     int choice = 1;
 
     while (choice == 1) {
-        // Get student name
+
         printf("Enter student name: ");
         scanf(" %49[^\n]", name); 
 
-        // Get and validate grades
+
         printf("Enter grade for Subject 1: ");
         scanf("%d", &grade1);
         while (grade1 < 0 || grade1 > 100) {
@@ -33,32 +33,31 @@ int main() {
             scanf("%d", &grade3);
         }
 
-        // Calculate total and average
+  
         total = grade1 + grade2 + grade3;
         average = total / 3.0;
 
-        // Display results
+   
         printf("\nResults for %s:\n", name);
         printf("Total Marks: %d\n", total);
         printf("Average Marks: %.2f\n", average);
         
-        // Check pass/fail
+  
         if (average >= 50) {
             printf("Status: Pass\n");
         } else {
             printf("Status: Fail\n");
         }
-
-        // Update class stats
+   
         studentCount++;
         classTotal += average;
 
-        // Ask if user wants to continue
+     
         printf("\nDo you want to enter details for another student? (1 for Yes, 0 for No): ");
         scanf("%d", &choice);
     }
 
-    // Display summary
+ 
     if (studentCount > 0) {
         printf("\nFinal Summary:\n");
         printf("Number of students processed: %d\n", studentCount);
